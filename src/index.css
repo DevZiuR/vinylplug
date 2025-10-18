@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* High Performance Detail Design System - Luxury Automotive Theme
+All colors MUST be HSL. Red and black premium automotive aesthetic.
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+
+    /* Brand Primary (Jonquil) */
+    --primary: 48 100% 49%; /* #F8CD00 */
+    --primary-foreground: 0 0% 0%; /* Black text on Jonquil */
+    --primary-glow: 48 96% 50%; /* #FBC700 variant for effects */
+    
+    /* Secondary (Near Black) */
+    --secondary: 0 0% 6%; /* Very dark gray/black */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent Colors (use lighter Jonquil variant) */
+    --accent: 48 96% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* Card & Surface Colors */
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+    
+    /* Interactive Elements */
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 48 100% 49%;
+    
+    /* Design System Tokens */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(0 0% 0% / 0.8));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(0 0% 8%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.35);
+    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.6);
+    --shadow-card: 0 10px 30px hsl(0 0% 0% / 0.35);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s ease-out;
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 48 100% 49%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 48 96% 50%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 48 100% 49%;
+  }
+
+  /* Dark mode (optional - not primary focus) */
+  .dark {
+    /* Keep same values - design is primarily dark themed */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+  
+  /* Card Styles */
+  .card-automotive {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    @apply border border-border/50 transition-all duration-300 hover:shadow-glow hover:border-primary/30;
+  }
+  
+  /* Text Animations */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+  
+  /* Parallax Effect */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
