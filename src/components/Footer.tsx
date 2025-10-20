@@ -182,7 +182,7 @@ const Footer = () => {
         <div className="border-t border-border/50 pt-8 reveal-on-scroll opacity-0 translate-y-6 will-change-transform">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
-              © 2025 VinylPlugFL. All rights reserved.
+              © 2025 VinylPlugFL. All rights reserved by Jesus R.
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm text-muted-foreground">
               <button className="hover:text-primary transition-colors duration-300">
